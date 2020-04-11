@@ -48,9 +48,9 @@ select
    ref.val           as referrer
 -- req.status
 from
-   request  req                             join
-   uri      uri on req.uri_id      = uri.id join
-   ua       ua  on req.ua_id       = ua.id  join
+   request  req                                  join
+   uri      uri on req.uri_id      = uri.id left join
+   ua       ua  on req.ua_id       = ua.id  left join
    referrer ref on req.referrer_id = ref.id
 -- addr     adr on req.addr_id     = adr.id
 ');
