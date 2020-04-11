@@ -11,8 +11,11 @@ function connect_to_webrequest_db() {
 }
 
 function webrequest_db_name() {
-#  return 'db/webrequest';
-   return '/home/httpd/vhosts/renenyffenegger.ch/db/webrequest';
+   if (file_exists('/home/httpd/vhosts/renenyffenegger.ch/db/webrequest')) {
+      return '/home/httpd/vhosts/renenyffenegger.ch/db/webrequest';
+   }
+   return 'db/webrequest';
+#  return ;
 }
 
 function insert_webrequest() {
@@ -25,6 +28,7 @@ function insert_webrequest() {
    }
 
    insert_webrequest_(
+      $_SERVER['REQUEST_URI'    ],
       $_SERVER['REQUEST_TIME'   ],
       $_SERVER['REMOTE_ADDR'    ],
       $_SERVER['HTTP_USER_AGENT'],
@@ -33,17 +37,17 @@ function insert_webrequest() {
 }
 
 
-function insert_webrequest_($t, $addr, $ua, $referrer) {
+function insert_webrequest_($uri, $t, $addr, $ua, $referrer) {
 
    $db = connect_to_webrequest_db();
 
    $stmt_id = $db -> prepare('select id from uri where uri = :uri');
-   $stmt_id  -> execute(array(':uri' => $_SERVER['REQUEST_URI'] ));
+   $stmt_id  -> execute(array(':uri' => $uri));
    $row = $stmt_id -> fetch();
 
    if ($row == NULL) {
       $stmt_ins_uri = $db->prepare('insert into uri (uri) values (:uri)');
-      $stmt_ins_uri -> execute(array(':uri' => $_SERVER['REQUEST_URI']));
+      $stmt_ins_uri -> execute(array(':uri' => $uri));
 
       $id = $db->lastInsertId();
    }
