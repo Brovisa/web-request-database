@@ -22,4 +22,17 @@ $db->exec('create table request(
 -- status   integer
 )');
 
+$db->exec('create view request_v as
+select
+   uri.uri,
+   req.t,
+   req.addr,
+   req.ua,
+   req.referrer
+-- req.status
+from
+   uri      uri                        join
+   request  req on uri.id = req.uri_id
+');
+
 ?>
