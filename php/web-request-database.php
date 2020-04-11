@@ -11,7 +11,7 @@ function connect_to_webrequest_db() {
 }
 
 function webrequest_db_name() {
-   if (file_exists('/home/httpd/vhosts/renenyffenegger.ch/db/webrequest')) {
+   if (is_dir('/home/httpd/vhosts/renenyffenegger.ch/db')) {
       return '/home/httpd/vhosts/renenyffenegger.ch/db/webrequest';
    }
    return 'db/webrequest';
@@ -36,18 +36,19 @@ function insert_webrequest() {
     );
 }
 
+function id_of($db, $tab, $val) {
 
-function insert_webrequest_($uri, $t, $addr, $ua, $referrer) {
+   if ($val == NULL) {
+      return NULL;
+   }
 
-   $db = connect_to_webrequest_db();
-
-   $stmt_id = $db -> prepare('select id from uri where uri = :uri');
-   $stmt_id  -> execute(array(':uri' => $uri));
+   $stmt_id = $db -> prepare("select id from $tab where val = :val");
+   $stmt_id  -> execute(array(':val' => $val));
    $row = $stmt_id -> fetch();
 
    if ($row == NULL) {
-      $stmt_ins_uri = $db->prepare('insert into uri (uri) values (:uri)');
-      $stmt_ins_uri -> execute(array(':uri' => $uri));
+      $stmt_ins_uri = $db->prepare("insert into $tab (val) values (:val)");
+      $stmt_ins_uri -> execute(array(':val' => $val));
 
       $id = $db->lastInsertId();
    }
@@ -55,19 +56,32 @@ function insert_webrequest_($uri, $t, $addr, $ua, $referrer) {
       $id = $row['id'];
    }
 
-   $stmt_ins_request = $db->prepare('insert into request (uri_id, t, addr, ua, referrer
+   return $id;
+}
+
+function insert_webrequest_($uri, $t, $addr, $ua, $referrer) {
+
+   $db = connect_to_webrequest_db();
+
+   $uri_id      = id_of($db, 'uri'     , $uri     );
+   $ua_id       = id_of($db, 'ua'      , $ua      );
+   $referrer_id = id_of($db, 'referrer', $referrer);
+#  $addr_id     = id_of($db, 'addr'    , $addr    );
+
+   $stmt_ins_request = $db->prepare('insert into request (uri_id, t, addr, ua_id, referrer_id
     -- , status
     )
-    values (:id, :t, :addr, :ua, :referrer
+    values (:uri_id, :t, :addr, :ua_id, :referrer_id
     --, :status
     )');
 
    $stmt_ins_request -> execute(array(
-       ':id'       => $id,
-       ':t'        => $t,
-       ':addr'     => $addr,
-       ':ua'       => $ua,
-       ':referrer' => $referrer
+       ':uri_id'      => $uri_id,
+       ':t'           => $t,
+       ':addr'        => $addr,
+#      ':addr_id'     => $addr_id,
+       ':ua_id'       => $ua_id,
+       ':referrer_id' => $referrer_id
    ));
 
 }

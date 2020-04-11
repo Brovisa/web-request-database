@@ -9,16 +9,16 @@ if ($_SERVER['QUERY_STRING'] == 'all') {
 }
 elseif (array_key_exists('count', $_REQUEST)) {
    if ($_REQUEST['count'] == 'uri') {
-      selectCount($db, 'uri', 'uri');
+      selectCount($db, 'uri');
    }
    elseif ($_REQUEST['count'] == 'ua') {
-      selectCount($db, 'req', 'ua');
+      selectCount($db, 'ua');
    }
    elseif ($_REQUEST['count'] == 'addr') {
-      selectCount($db, 'req', 'addr');
+      selectCount($db, 'addr');
    }
    elseif ($_REQUEST['count'] == 'referrer') {
-      selectCount($db, 'req', 'referrer');
+      selectCount($db, 'referrer');
    }
    else {
       print("Unknown col: " . $_REQUEST['count']);
@@ -40,19 +40,19 @@ else {
 }
 
 $stmt = $db -> prepare("select
-   uri.uri,
-   req.t,
-   req.addr,
-   req.ua,
-   req.referrer
--- req.status
+   uri,
+   t,
+   addr,
+   ua,
+   referrer
+-- status
 from
-   uri      uri                        join
-   request  req on uri.id = req.uri_id
+   request_v
 where
    1 = 1 $where
 order by
-   req.t");
+   t
+   ");
 $stmt->execute();
 
 print("<table border=1>");
@@ -67,7 +67,7 @@ print("<table border=1>");
    }
 print("</table>");
 
-function selectCount($db, $tabAlias, $colName) {
+function selectCount($db, $colName) {
 
    $where = '';
    if ($colName == 'referrer') {
@@ -76,14 +76,13 @@ function selectCount($db, $tabAlias, $colName) {
 
    $stmt = $db -> prepare("select
       count(*) cnt,
-      $tabAlias.$colName
+      $colName
    from
-      uri      uri                        join
-      request  req on uri.id = req.uri_id
+      request_v 
    where
       1 = 1 $where
    group by
-      $tabAlias.$colName
+      $colName
    order by
       count(*) desc");
 
