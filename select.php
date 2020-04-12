@@ -3,6 +3,8 @@
 require_once('php/web-request-database.php');
 $db = connect_to_webrequest_db();
 
+$db->sqliteCreateFunction('regexp_like', 'preg_match', 2);
+
 $where = '';
 if ($_SERVER['QUERY_STRING'] == 'all') {
    # do nothing special
@@ -111,14 +113,30 @@ function selectCount($db, $colName) {
 
 function referrerNotIn() {
    return "and referrer is not null and 
-   referrer not like 'https://www.google.%' and
+-- referrer not like 'https://www.google.%' and
+-- not regexp_like('/https:[^\/]*(yahoo|google)\.com\//', referrer) and
+   not regexp_like('/^https:\/\/"          .
+                   "[^.]+\."               . 
+                   "(bing|yahoo|google)\." .
+                   "[^.]+"                 .
+                   "\/?/', referrer) and
+
+   not regexp_like('/^https:\/\/" . 
+                   "[^.]+\."  .
+                   "[^.]+\."  .
+                   "(bing|yahoo|google)\.[^.]+\/?/', referrer) and
+
+   not regexp_like('/\/\/www\.google\.[^.]+\.[^.]+\//', referrer) and
+   referrer not like 'https://translate.googleusercontent.com/translate_p%' and
    referrer not like 'https://www.bing.com%' and
    referrer not like 'https://renenyffenegger.ch/%' and
    referrer not like 'https://duckduckgo.com%' and
    referrer not like 'https://baidu.com/%' and
    referrer not like 'http://baidu.com/%' and
    referrer not like 'http://www.adp-gmbh.ch/%' and
-   referrer not like 'https://www.ecosia.org/'
+   referrer not like 'https://www.ecosia.org/' and
+   referrer not like 'https://www.qwant.com/' and
+   referrer not like 'https://www.dogedoge.com/'
    ";
 
 
