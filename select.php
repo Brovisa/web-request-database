@@ -13,6 +13,9 @@ elseif (array_key_exists('count', $_REQUEST)) {
    if ($_REQUEST['count'] == 'uri') {
       selectCount($db, 'uri');
    }
+   if ($_REQUEST['count'] == 'uri-last-7-days') {
+      selectCountUriLast7Days($db);
+   }
    elseif ($_REQUEST['count'] == 'ua') {
       selectCount($db, 'ua');
    }
@@ -34,6 +37,7 @@ elseif ($_SERVER['QUERY_STRING'] == 'referrer') {
 else {
    print("<a href='select.php?all'>select *</a><br>
    <a href='select.php?count=uri'>select count(*), uri…</a><br>
+   <a href='select.php?count=uri-last-7-days'>select count(*), uri… (last 7 days)</a><br>
    <a href='select.php?count=ua'>select count(*), ua…</a><br>
    <a href='select.php?count=addr'>select count(*), addr…</a><br>
    <a href='select.php?count=referrer'>select count(*), referrer…</a><br>
@@ -107,6 +111,42 @@ function selectCount($db, $colName) {
 
        print("</tr>");
    }
+   print("</table>");
+
+}
+
+function selectCountUriLast7Days($db) {
+
+    $stmt = $db->prepare("
+select
+   uri,
+   count(case when t between strftime('%s', 'now', '-8 days') and strftime('%s', 'now', '-7 days') then 1 end) cnt_7,
+   count(case when t between strftime('%s', 'now', '-7 days') and strftime('%s', 'now', '-6 days') then 1 end) cnt_6,
+   count(case when t between strftime('%s', 'now', '-6 days') and strftime('%s', 'now', '-5 days') then 1 end) cnt_5,
+   count(case when t between strftime('%s', 'now', '-5 days') and strftime('%s', 'now', '-4 days') then 1 end) cnt_4,
+   count(case when t between strftime('%s', 'now', '-4 days') and strftime('%s', 'now', '-3 days') then 1 end) cnt_3,
+   count(case when t between strftime('%s', 'now', '-3 days') and strftime('%s', 'now', '-2 days') then 1 end) cnt_2,
+   count(case when t between strftime('%s', 'now', '-2 days') and strftime('%s', 'now', '-1 days') then 1 end) cnt_1,
+   count(case when t between strftime('%s', 'now', '-1 days') and strftime('%s', 'now', '-0 days') then 1 end) cnt_0
+from
+   request_v
+group by
+   uri
+order by
+   cnt_0 desc");
+
+   $stmt -> execute();
+   print("<table border='1'>");
+   while ($row = $stmt->fetch()) {
+
+      printf("<tr><td>%s</td>
+      <td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td> <td>%d</td>
+      <td>%s</td>
+      </tr>", $row['uri'], $row['cnt_7'], $row['cnt_6'], $row['cnt_5'], $row['cnt_4'], $row['cnt_3'], $row['cnt_2'], $row['cnt_1'], $row['cnt_0'],
+      $row['cnt_7'] ? sprintf("%3.1f", 1.0/$row['cnt_7'] * $row['cnt_0']) : '-'
+      );
+   }
+
    print("</table>");
 
 }
