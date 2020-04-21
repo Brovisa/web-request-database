@@ -23,7 +23,7 @@ elseif (array_key_exists('count', $_REQUEST)) {
       selectCount($db, 'addr');
    }
    elseif ($_REQUEST['count'] == 'referrer') {
-      selectCount($db, 'referrer');
+      selectCountReferrer($db);
    }
    else {
       print("Unknown col: " . $_REQUEST['count']);
@@ -33,6 +33,10 @@ elseif (array_key_exists('count', $_REQUEST)) {
 }
 elseif ($_SERVER['QUERY_STRING'] == 'referrer') {
    $where =referrerNotIn();
+}
+elseif (array_key_exists('referrer', $_REQUEST)) {
+    printf("REFERRER [%s]", $_REQUEST['referrer']);
+    return 0;
 }
 else {
    print("<a href='select.php?all'>select *</a><br>
@@ -76,9 +80,9 @@ print("</table>");
 function selectCount($db, $colName) {
 
    $where = '';
-   if ($colName == 'referrer') {
-      $where = referrerNotIn();
-   }
+#  if ($colName == 'referrer') {
+#     $where = referrerNotIn();
+#  }
 
    $stmt = $db -> prepare("select
       count(*) cnt,
@@ -97,12 +101,49 @@ function selectCount($db, $colName) {
    while ($row = $stmt->fetch()) {
        print("<tr><td>" . $row['cnt']    . "</td>");
 
-         if ($colName == 'referrer') {
-            print("<td><a href='" . $row[$colName] . "' target='_blank'>" . $row[$colName] . "</a></td>");
-         }
-         else {
+#        if ($colName == 'referrer') {
+#           print("<td><a href='" . $row[$colName] . "' target='_blank'>" . $row[$colName] . "</a></td>");
+#        }
+#        else {
             print("<td>" . $row[$colName] . "</td>");
-         }
+#        }
+
+
+         # if ($colName == 'addr') {
+         #    print("<td>" . gethostbyaddr($row['addr']) . "</td>");
+         # }
+
+       print("</tr>");
+   }
+   print("</table>");
+
+}
+
+function selectCountReferrer($db) {
+
+   $where = referrerNotIn();
+
+   $stmt = $db -> prepare("select
+      count(*) cnt,
+      referrer,
+      uri
+   from
+      request_v 
+   where
+      1 = 1 $where
+   group by
+      referrer,
+      uri
+   order by
+      count(*) desc");
+
+   $stmt->execute();
+   print("<table border='1'>");
+   while ($row = $stmt->fetch()) {
+       print("<tr><td>" . $row['cnt']    . "</td>");
+
+         print("<td><a href='" . $row['referrer'] . "' target='_blank'>" . substr($row['referrer'], 0, 150) . "</a></td>");
+         print("<td>"          . $row['uri'     ]                                          .     "</td>");
 
 
          # if ($colName == 'addr') {
@@ -155,7 +196,7 @@ function referrerNotIn() {
    return "and referrer is not null and 
 -- referrer not like 'https://www.google.%' and
 -- not regexp_like('/https:[^\/]*(yahoo|google)\.com\//', referrer) and
-   not regexp_like('/^https:\/\/"          .
+   not regexp_like('/^https?:\/\/"          .
                    "[^.]+\."               . 
                    "(bing|yahoo|google)\." .
                    "[^.]+"                 .
@@ -176,7 +217,44 @@ function referrerNotIn() {
    referrer not like 'http://www.adp-gmbh.ch/%' and
    referrer not like 'https://www.ecosia.org/' and
    referrer not like 'https://www.qwant.com/' and
-   referrer not like 'https://www.dogedoge.com/'
+   referrer not like 'https://www.dogedoge.com/' and
+   referrer not like 'android-app://com.google.android.%' and
+   referrer not like 'https://m.instasrch.com/search/gcse%' and 
+   referrer not like 'https://int.search.myway.com/search/GGmain.jhtml?%' and
+   referrer not like 'https://translate.googleusercontent.com/translate_c?%' and
+   referrer not like 'https://coccoc.com/search?query=%' and
+   referrer not like 'https://search.earthlink.net/search%' and
+   referrer not like 'https://nortonsafe.search.ask.com/web?%' and
+   referrer not like 'https://swisscows.ch/web?%' and
+   referrer not like 'https://tylerjira.tylertech.com/browse/%' and
+   referrer not like 'https://int.search.tb.ask.com/search/GGmain.jhtml%' and
+   referrer not in (
+      'https://7ooo.ru/',
+      'https://l.facebook.com/'
+   )
+   " 
+   . 
+   "
+   and referrer not in (
+     'https://github.com/ReneNyffenegger/cpp-base64',
+     'https://github.com/ReneNyffenegger/gcc-create-library',
+     'https://github.com/ReneNyffenegger/WinAPI-4-VBA',
+     'https://answers.opencv.org/question/174328/base64-to-mat-and-mat-to-base64/',
+     'http://october388.blogspot.com/2009/04/mingwdll.html',
+     'https://github.com/zangelus/smartgcc',
+     'https://blog.csdn.net/weixin_34341117/article/details/91741856',
+     'https://towardsdatascience.com/machine-learning-model-deployment-with-c-fad31d5fe04',
+     'https://github.com/ReneNyffenegger/winsqlite3.dll-PowerShell/blob/master/README.md',
+     'https://my.oschina.net/VenusV/blog/2946245',
+     'https://www.eclipse.org/forums/index.php/t/1102166/',
+     'https://www.figma.com/open-source/',
+     'https://www.linuxquestions.org/questions/linux-newbie-8/implementing-bluetooth-in-c-417564',
+     'http://www.cplusplus.com/forum/beginner/35554/',
+     'https://medium.com/@fanzongshaoxing/tensorflow-c-api-to-run-a-object-detection-model-4d5928893b02',
+     'https://social.technet.microsoft.com/Forums/en-US/ee048512-1b36-40e1-92cf-9f64e2f52299/windows-10-manual?forum=win10itprogeneral'
+   ) and
+   referrer not like 'https://renenyffenegger.ch%' and
+   referrer not like 'https://github.com/%/os_lab_2019/blob/master/lab2/text/lab2.md'
    ";
 
 
