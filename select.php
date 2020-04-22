@@ -216,11 +216,15 @@ function referrerNotIn() {
    referrer not like 'http://baidu.com/%' and
    referrer not like 'http://www.adp-gmbh.ch/%' and
    referrer not like 'https://www.ecosia.org/' and
-   referrer not like 'https://www.qwant.com/' and
+   referrer not like 'https://%.qwant.com/' and
    referrer not like 'https://www.dogedoge.com/' and
    referrer not like 'android-app://com.google.android.%' and
    referrer not like 'https://m.instasrch.com/search/gcse%' and 
-   referrer not like 'https://int.search.myway.com/search/GGmain.jhtml?%' and
+   referrer not like 'https://%search.myway.com/search/GGmain.jhtml?%' and
+   referrer not like 'http://%search.myway.com/search/GGmain.jhtml?%' and
+   referrer not like 'https://m.search2.co/search/%' and
+   referrer not like 'https://adfs.contiwan.com/adfs/ls/%' and
+   referrer not like 'https://gateway.zscloud.net/auW?origurl=%' and
    referrer not like 'https://translate.googleusercontent.com/translate_c?%' and
    referrer not like 'https://coccoc.com/search?query=%' and
    referrer not like 'https://search.earthlink.net/search%' and
@@ -228,9 +232,23 @@ function referrerNotIn() {
    referrer not like 'https://swisscows.ch/web?%' and
    referrer not like 'https://tylerjira.tylertech.com/browse/%' and
    referrer not like 'https://int.search.tb.ask.com/search/GGmain.jhtml%' and
+   referrer not like 'https://search.xfinity.com/?searchTerm=%' and
+   referrer not like 'http://blackle.com/%' and
+   referrer not like 'https://yandex.ru/%' and
+   referrer not like 'https://translate.wordpress.org/%' and
+   referrer not like 'https://start.me/search/google?q=%' and
+   referrer not like 'https://r.search.aol.com/%' and
+   referrer not like 'https://www.lukol.com/%' and
    referrer not in (
       'https://7ooo.ru/',
-      'https://l.facebook.com/'
+      'http://m.facebook.com',
+      'https://l.facebook.com/',
+      'https://github.com/',
+      'https://web.skype.com/',
+      'http://localhost:8888/',
+      'https://gl.duoyioa.com/',
+      'https://adfs.colt.net/adfs/ls/wia',
+      'https://away.vk.com/'
    )
    " 
    . 
@@ -239,6 +257,9 @@ function referrerNotIn() {
      'https://github.com/ReneNyffenegger/cpp-base64',
      'https://github.com/ReneNyffenegger/gcc-create-library',
      'https://github.com/ReneNyffenegger/WinAPI-4-VBA',
+     'https://github.com/ReneNyffenegger/cpp-base64/blob/master/README.md',
+     'http://mqjing.blogspot.com/2009/04/c-gcc-library.html',
+     'https://github.com/m-ab-s/media-autobuild_suite/pull/1465',
      'https://answers.opencv.org/question/174328/base64-to-mat-and-mat-to-base64/',
      'http://october388.blogspot.com/2009/04/mingwdll.html',
      'https://github.com/zangelus/smartgcc',
@@ -248,12 +269,18 @@ function referrerNotIn() {
      'https://my.oschina.net/VenusV/blog/2946245',
      'https://www.eclipse.org/forums/index.php/t/1102166/',
      'https://www.figma.com/open-source/',
-     'https://www.linuxquestions.org/questions/linux-newbie-8/implementing-bluetooth-in-c-417564',
+     'https://www.linuxquestions.org/questions/linux-newbie-8/implementing-bluetooth-in-c-4175643687-print/',
      'http://www.cplusplus.com/forum/beginner/35554/',
      'https://medium.com/@fanzongshaoxing/tensorflow-c-api-to-run-a-object-detection-model-4d5928893b02',
-     'https://social.technet.microsoft.com/Forums/en-US/ee048512-1b36-40e1-92cf-9f64e2f52299/windows-10-manual?forum=win10itprogeneral'
+     'https://social.technet.microsoft.com/Forums/en-US/ee048512-1b36-40e1-92cf-9f64e2f52299/windows-10-manual?forum=win10itprogeneral',
+     'https://rich-v01.bluewin.ch/cp/applink/mail/LoadMessageContent?cKey=1587324117250-5071&iframeID=x-mail-msg-iframe-box-1587324117107&cw=792',
+     'https://route7fxcqz4s-thenoobest-che.b542.starter-us-east-2a.openshiftapps.com/?uid=965884',
+     'http://october388.blogspot.com/2009/04/mingwdll.html?m=1',
+     'https://routekpsxxkl6-nikita19992022-che.b542.starter-us-east-2a.openshiftapps.com/?uid=238554',
+     'http://xsstorweb56srs3a.onion/threads/18099/'
    ) and
-   referrer not like 'https://renenyffenegger.ch%' and
+   referrer not like 'http%://renenyffenegger.ch/notes%' and
+   referrer not like 'http://disclaimer.airbusafran-launchers.com/notify-Disclaimer?https/renenyffenegger.ch/%' and
    referrer not like 'https://github.com/%/os_lab_2019/blob/master/lab2/text/lab2.md'
    ";
 
