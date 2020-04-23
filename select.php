@@ -158,6 +158,18 @@ function selectCountReferrer($db) {
 
 function selectCountUriLast7Days($db) {
 
+   print('<!DOCTYPE>
+<html><head><title>Select count of URIs for the last 7 deays</title>
+<style>
+  td.abs {
+    background-color:#eef
+  }
+  td.rel {
+    background-color:#efe
+  }
+</style>
+<body>');
+
     $stmt = $db->prepare("
 select
    uri,
@@ -174,7 +186,9 @@ from
 group by
    uri
 order by
-   cnt_0 desc");
+   cnt_0 desc
+--   cnt_0 - cnt_7 desc
+");
 
    $stmt -> execute();
    print("<table border='1'>");
@@ -182,13 +196,17 @@ order by
 
       printf("<tr><td>%s</td>
       <td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td> <td>%d</td>
-      <td>%s</td>
+      <td class='rel'>%s</td>
+      <td class='abs'>%d</td>
       </tr>", $row['uri'], $row['cnt_7'], $row['cnt_6'], $row['cnt_5'], $row['cnt_4'], $row['cnt_3'], $row['cnt_2'], $row['cnt_1'], $row['cnt_0'],
-      $row['cnt_7'] ? sprintf("%3.1f", 1.0/$row['cnt_7'] * $row['cnt_0']) : '-'
+      $row['cnt_7'] ? sprintf("%3.1f", 1.0/$row['cnt_7'] * $row['cnt_0']) : '-',
+      $row['cnt_0'] - $row['cnt_7']
       );
    }
 
    print("</table>");
+
+   print('</body></html>');
 
 }
 
