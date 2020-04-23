@@ -208,14 +208,14 @@ function referrerNotIn() {
                    "(bing|yahoo|google)\.[^.]+\/?/', referrer) and
 
    not regexp_like('/\/\/www\.google\.[^.]+\.[^.]+\//', referrer) and
-   referrer not like 'https://translate.googleusercontent.com/translate_p%' and
+   referrer not like 'https://translate.googleusercontent.com/%' and
    referrer not like 'https://www.bing.com%' and
    referrer not like 'https://renenyffenegger.ch/%' and
    referrer not like 'https://duckduckgo.com%' and
    referrer not like 'https://baidu.com/%' and
    referrer not like 'http://baidu.com/%' and
    referrer not like 'http://www.adp-gmbh.ch/%' and
-   referrer not like 'https://www.ecosia.org/' and
+   referrer not like 'https://www.ecosia.org/%' and
    referrer not like 'https://%.qwant.com/' and
    referrer not like 'https://www.dogedoge.com/' and
    referrer not like 'android-app://com.google.android.%' and
@@ -239,6 +239,13 @@ function referrerNotIn() {
    referrer not like 'https://start.me/search/google?q=%' and
    referrer not like 'https://r.search.aol.com/%' and
    referrer not like 'https://www.lukol.com/%' and
+   referrer not like 'http%://www.so.com/%' and
+   referrer not like 'http%://www.seeres.com/%' and
+   referrer not like 'http%://seeres.com/%' and
+   referrer not like 'https://www.startsiden.no/sok/%' and
+   referrer not like 'https://www.startsiden.no/sok/%' and
+   referrer not like 'https://oceanhero.today/web?q=%' and
+   referrer not like 'http://doc.oopsystemhk.com/Search/Default.aspx?%' and
    referrer not in (
       'https://7ooo.ru/',
       'http://m.facebook.com',
@@ -248,7 +255,21 @@ function referrerNotIn() {
       'http://localhost:8888/',
       'https://gl.duoyioa.com/',
       'https://adfs.colt.net/adfs/ls/wia',
-      'https://away.vk.com/'
+      'https://away.vk.com/',
+      'https://gg0.chn.moe/',
+      'https://l.messenger.com/',
+      'https://m.vk.com/',
+      'https://adguard.com/referrer.html',
+      'http://go.mail.ru/search_images',
+      'https://daynhauhoc.com/',
+      'https://www.kadaza.com/',
+      'https://www.gog-info.com/',
+      'https://www.qop-home.com/',
+      'https://start.duckduckgo.com/',
+      'https://workona.com/redirect/',
+      'https://www.ardanlabs.com/',
+      'https://sso.bah.com/',
+      'https://sirius.na.sas.com/Sirius/GSTS/ShowTrack.aspx?trknum=7613050096'
    )
    " 
    . 
@@ -263,6 +284,7 @@ function referrerNotIn() {
      'https://answers.opencv.org/question/174328/base64-to-mat-and-mat-to-base64/',
      'http://october388.blogspot.com/2009/04/mingwdll.html',
      'https://github.com/zangelus/smartgcc',
+     'https://github.com/igordevM/MietStudy/blob/master/lab2/text/lab2.md',
      'https://blog.csdn.net/weixin_34341117/article/details/91741856',
      'https://towardsdatascience.com/machine-learning-model-deployment-with-c-fad31d5fe04',
      'https://github.com/ReneNyffenegger/winsqlite3.dll-PowerShell/blob/master/README.md',
@@ -275,6 +297,8 @@ function referrerNotIn() {
      'https://social.technet.microsoft.com/Forums/en-US/ee048512-1b36-40e1-92cf-9f64e2f52299/windows-10-manual?forum=win10itprogeneral',
      'https://rich-v01.bluewin.ch/cp/applink/mail/LoadMessageContent?cKey=1587324117250-5071&iframeID=x-mail-msg-iframe-box-1587324117107&cw=792',
      'https://route7fxcqz4s-thenoobest-che.b542.starter-us-east-2a.openshiftapps.com/?uid=965884',
+     'https://github.com/ReneNyffenegger/cpp-base64/',
+     'https://github.com/ReneNyffenegger/cpp-base64/blob/master/test.cpp',
      'http://october388.blogspot.com/2009/04/mingwdll.html?m=1',
      'https://routekpsxxkl6-nikita19992022-che.b542.starter-us-east-2a.openshiftapps.com/?uid=238554',
      'http://xsstorweb56srs3a.onion/threads/18099/'
