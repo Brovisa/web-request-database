@@ -264,8 +264,12 @@ function referrerNotIn() {
    referrer not like 'https://www.startsiden.no/sok/%' and
    referrer not like 'https://oceanhero.today/web?q=%' and
    referrer not like 'http://doc.oopsystemhk.com/Search/Default.aspx?%' and
+   referrer not like 'https://gibiru.com/results.html?q%' and
+   referrer not like 'https://www.gle-search.com/%' and
+   referrer not like 'https://gateway.zscalertwo.net/%' and
    referrer not in (
       'https://7ooo.ru/',
+      'https://metager.de/',
       'http://m.facebook.com',
       'https://l.facebook.com/',
       'https://github.com/',
@@ -303,7 +307,6 @@ function referrerNotIn() {
      'http://october388.blogspot.com/2009/04/mingwdll.html',
      'https://github.com/zangelus/smartgcc',
      'https://github.com/igordevM/MietStudy/blob/master/lab2/text/lab2.md',
-     'https://blog.csdn.net/weixin_34341117/article/details/91741856',
      'https://towardsdatascience.com/machine-learning-model-deployment-with-c-fad31d5fe04',
      'https://github.com/ReneNyffenegger/winsqlite3.dll-PowerShell/blob/master/README.md',
      'https://my.oschina.net/VenusV/blog/2946245',
@@ -323,7 +326,8 @@ function referrerNotIn() {
    ) and
    referrer not like 'http%://renenyffenegger.ch/notes%' and
    referrer not like 'http://disclaimer.airbusafran-launchers.com/notify-Disclaimer?https/renenyffenegger.ch/%' and
-   referrer not like 'https://github.com/%/os_lab_2019/blob/master/lab2/text/lab2.md'
+   referrer not like 'https://github.com/%/os_lab_2019/blob/master/lab2/text/lab2.md' and
+   referrer not like 'https://blog.csdn.net/weixin_34341117/article/details/91741856%'
    ";
 
 
