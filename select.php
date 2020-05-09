@@ -246,7 +246,7 @@ function referrerNotIn() {
    referrer not like 'https://translate.googleusercontent.com/translate_c?%' and
    referrer not like 'https://coccoc.com/search?query=%' and
    referrer not like 'https://search.earthlink.net/search%' and
-   referrer not like 'https://nortonsafe.search.ask.com/web?%' and
+   referrer not like 'https://%.search.ask.com/web?%' and
    referrer not like 'https://swisscows.ch/web?%' and
    referrer not like 'https://tylerjira.tylertech.com/browse/%' and
    referrer not like 'https://int.search.tb.ask.com/search/GGmain.jhtml%' and
@@ -267,16 +267,32 @@ function referrerNotIn() {
    referrer not like 'https://gibiru.com/results.html?q%' and
    referrer not like 'https://www.gle-search.com/%' and
    referrer not like 'https://gateway.zscalertwo.net/%' and
+   referrer not like 'https://dsearch.com/%' and
+   referrer not like 'https://suche.t-online.de/%' and
+   referrer not like 'https://search.lilo.org/%' and
+   referrer not like 'http://wenote.huawei.com/%' and
    referrer not in (
+      'https://renenyffenegger.ch',                                          -- XXX
+      'http://renenyffenegger.ch',                                           -- XXX
       'https://7ooo.ru/',
       'https://metager.de/',
       'http://m.facebook.com',
       'https://l.facebook.com/',
       'https://github.com/',
+      'http://surf-es.com/',
+      'http://www.surf-es.com/',
       'https://web.skype.com/',
+      'https://getpocket.com/',
+      'https://g3.luciaz.me/',
+      'https://github.ibm.com/',
       'http://localhost:8888/',
+      'https://devtalk.blender.org/',                                        -- ???
+      'https://search.becovi.com/',
       'https://gl.duoyioa.com/',
       'https://adfs.colt.net/adfs/ls/wia',
+      'https://results.searchlock.com/',
+      'https://cbsearch.site/',
+      'https://www.developpez.net/',
       'https://away.vk.com/',
       'https://gg0.chn.moe/',
       'https://l.messenger.com/',
@@ -291,7 +307,23 @@ function referrerNotIn() {
       'https://workona.com/redirect/',
       'https://www.ardanlabs.com/',
       'https://sso.bah.com/',
-      'https://sirius.na.sas.com/Sirius/GSTS/ShowTrack.aspx?trknum=7613050096'
+      'https://sirius.na.sas.com/Sirius/GSTS/ShowTrack.aspx?trknum=7613050096',
+      'https://route92a3pi42-vladimirkv-che.8a09.starter-us-east-2.openshiftapps.com/?uid=724079',
+      'http://rsdn.org/forum/db/2446832.all',
+      'https://ec58f1e1-ec46-4ede-9c32-9f8ae8ae7fb3.ws-us02.gitpod.io/',
+      'https://gerrit.ericsson.se/',
+      'android-app://com.linkedin.android',
+      'android-app://com.linkedin.android/',
+      'https://int.search.myway.com/',
+      'https://t.co/',
+      'https://www.accueil-search.com/',
+      'https://www.reddit.com/',
+      'https://dev.to/',
+      'https://www.twitch.tv/',
+      'https://app.raindrop.io/',
+      'https://jit.ozon.ru/browse/RE-1999',
+      'http://172.17.7.22:15871/cgi-bin/blockOptions.cgi?ws-session=1485309825',
+      'http://biosc.xyz/results.php?wd=select%20only%20top%20row%20oracle'
    )
    " 
    . 
@@ -299,9 +331,14 @@ function referrerNotIn() {
    and referrer not in (
      'https://github.com/ReneNyffenegger/cpp-base64',
      'https://github.com/ReneNyffenegger/gcc-create-library',
-     'https://github.com/ReneNyffenegger/WinAPI-4-VBA',
-     'https://github.com/ReneNyffenegger/cpp-base64/blob/master/README.md',
+     'https://github.com/ReneNyffenegger/winsqlite3.dll-4-VBA',
+     'https://github.com/ReneNyffenegger/winsqlite3.dll-4-VBA/blob/master/README.md',
+     'https://github.com/ReneNyffenegger/winsqlite3.dll-PowerShell',
+     'https://github.com/marksisson/ReneNyffenegger.cpp-base64',
+     'https://github.com/dedmen/cpp-base64/tree/0aaaf66785558807da1c331be114f8727f7f5a2b',
+     'https://github.com/wnxd/cpp-base64',
      'http://mqjing.blogspot.com/2009/04/c-gcc-library.html',
+     'https://dnupaseventeentwo.elfiny.top/pa-17-2-unix/21_5.html',
      'https://github.com/m-ab-s/media-autobuild_suite/pull/1465',
      'https://answers.opencv.org/question/174328/base64-to-mat-and-mat-to-base64/',
      'http://october388.blogspot.com/2009/04/mingwdll.html',
@@ -315,19 +352,30 @@ function referrerNotIn() {
      'https://www.linuxquestions.org/questions/linux-newbie-8/implementing-bluetooth-in-c-4175643687-print/',
      'http://www.cplusplus.com/forum/beginner/35554/',
      'https://medium.com/@fanzongshaoxing/tensorflow-c-api-to-run-a-object-detection-model-4d5928893b02',
+     'https://medium.com/androidiots/the-magic-of-kotlin-native-part-2-49097c2dea1a',
+     'https://bitbucket.org/jeewhanchoi/uoregon-cis330-s20-assignments/src/master/lab04/REAMDE.md',
      'https://social.technet.microsoft.com/Forums/en-US/ee048512-1b36-40e1-92cf-9f64e2f52299/windows-10-manual?forum=win10itprogeneral',
      'https://rich-v01.bluewin.ch/cp/applink/mail/LoadMessageContent?cKey=1587324117250-5071&iframeID=x-mail-msg-iframe-box-1587324117107&cw=792',
+     'https://www.developpez.net/forums/d2074018/c-cpp/c/bibliotheques-systemes-outils/bibliotheque-standard/ellipse-passage-d-arguments-multiples-stdarg/',
      'https://route7fxcqz4s-thenoobest-che.b542.starter-us-east-2a.openshiftapps.com/?uid=965884',
      'https://github.com/ReneNyffenegger/cpp-base64/',
      'https://github.com/ReneNyffenegger/cpp-base64/blob/master/test.cpp',
      'http://october388.blogspot.com/2009/04/mingwdll.html?m=1',
      'https://routekpsxxkl6-nikita19992022-che.b542.starter-us-east-2a.openshiftapps.com/?uid=238554',
-     'http://xsstorweb56srs3a.onion/threads/18099/'
+     'http://xsstorweb56srs3a.onion/threads/18099/',
+     'http://www.cse.iitd.ac.in/~srsarangi/courses/2019/col_331_2019/index.html',
+     'https://bitbucket.org/lednesday/uoregon-cis330-s20/src/master/lab04/',                             -- ???
+     'https://pc-newtab.maxthon.com/?&ln=en-us&mxver=5.3.8.2000&mxpn=max5'                               -- ???
    ) and
+   referrer not like 'https://medium.com/@hussaini.faisal/hackthebox-writeup-control-370ff9ec01bb%' and
+   referrer not like 'https://github.com/ReneNyffenegger/cpp-base64/%' and
+   referrer not like 'https://github.com/ReneNyffenegger/WinAPI-4-VBA%' and
    referrer not like 'http%://renenyffenegger.ch/notes%' and
+   referrer not like 'https://%.kutu66.com/GitHub/article_150480' and
    referrer not like 'http://disclaimer.airbusafran-launchers.com/notify-Disclaimer?https/renenyffenegger.ch/%' and
    referrer not like 'https://github.com/%/os_lab_2019/blob/master/lab2/text/lab2.md' and
-   referrer not like 'https://blog.csdn.net/weixin_34341117/article/details/91741856%'
+   referrer not like 'https://blog.csdn.net/weixin_34341117/article/details/91741856%' and
+   referrer not like 'https://t.co/2fklLJl2Fl%'
    ";
 
 
