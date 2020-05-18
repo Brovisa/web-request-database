@@ -16,6 +16,9 @@ elseif (array_key_exists('count', $_REQUEST)) {
    if ($_REQUEST['count'] == 'uri-last-7-days') {
       selectCountUriLast7Days($db);
    }
+   if ($_REQUEST['count'] == 'last-30-days') {
+      selectCountLast30Days($db);
+   }
    elseif ($_REQUEST['count'] == 'ua') {
       selectCount($db, 'ua');
    }
@@ -42,6 +45,7 @@ else {
    print("<a href='select.php?all'>select *</a><br>
    <a href='select.php?count=uri'>select count(*), uri…</a><br>
    <a href='select.php?count=uri-last-7-days'>select count(*), uri… (last 7 days)</a><br>
+   <a href='select.php?count=last-30-days'>select count(*) (last 30 days)</a><br>
    <a href='select.php?count=ua'>select count(*), ua…</a><br>
    <a href='select.php?count=addr'>select count(*), addr…</a><br>
    <a href='select.php?count=referrer'>select count(*), referrer…</a><br>
@@ -156,10 +160,53 @@ function selectCountReferrer($db) {
 
 }
 
+function selectCountLast30Days($db) {
+   print('<!DOCTYPE>
+<html><head><title>Select count of for the last 30 days</title>
+<style>
+</style>
+<body>');
+
+    $nofDays = 30;
+
+
+    $sql = "select\n" .
+      (  join(",\n",
+            array_map(function($n) {
+               return
+                  sprintf("count(case when t between strftime('%%s', 'now', '-%d days') and strftime('%%s', 'now', '-%0d days') then 1 end) cnt_%d",
+                  $n, $n-1, $n);  
+            },
+            range(1, $nofDays)
+            )
+         )
+       ) . 
+     ' from request_v';
+
+#   print("<pre>$sql</pre>");
+
+
+   $stmt = $db -> prepare($sql);
+   $stmt->execute();
+
+   $row = $stmt->fetch();
+
+   print($row);
+
+   print("<table>");
+   for ($i = $nofDays; $i > 0; $i--) {
+       printf("<tr><td>$i:</td><td>%d</td></tr>", $row["cnt_$i"]);
+   }
+   print("</table>");
+
+   print('</body></html>');
+
+}
+
 function selectCountUriLast7Days($db) {
 
    print('<!DOCTYPE>
-<html><head><title>Select count of URIs for the last 7 deays</title>
+<html><head><title>Select count of URIs for the last 7 days</title>
 <style>
   td.abs {
     background-color:#eef
