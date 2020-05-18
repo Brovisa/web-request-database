@@ -237,17 +237,22 @@ function referrerNotIn() {
    referrer not like 'https://%.qwant.com/' and
    referrer not like 'https://www.dogedoge.com/' and
    referrer not like 'android-app://com.google.android.%' and
+   referrer not like 'https://lavasoft.gosearchresults.com/%' and
    referrer not like 'https://m.instasrch.com/search/gcse%' and 
    referrer not like 'https://%search.myway.com/search/GGmain.jhtml?%' and
+   referrer not like 'http://biosc.xyz/results.php?wd=%' and
+   referrer not like 'https://www.yippy.com/search?%' and
    referrer not like 'http://%search.myway.com/search/GGmain.jhtml?%' and
    referrer not like 'https://m.search2.co/search/%' and
    referrer not like 'https://adfs.contiwan.com/adfs/ls/%' and
    referrer not like 'https://gateway.zscloud.net/auW?origurl=%' and
    referrer not like 'https://translate.googleusercontent.com/translate_c?%' and
+   referrer not like 'https://www.info.co.uk/serp?%' and
    referrer not like 'https://coccoc.com/search?query=%' and
    referrer not like 'https://search.earthlink.net/search%' and
    referrer not like 'https://%.search.ask.com/web?%' and
    referrer not like 'https://swisscows.ch/web?%' and
+   referrer not like 'http://search.zum.com/search.zum?%' and
    referrer not like 'https://tylerjira.tylertech.com/browse/%' and
    referrer not like 'https://int.search.tb.ask.com/search/GGmain.jhtml%' and
    referrer not like 'https://search.xfinity.com/?searchTerm=%' and
@@ -270,16 +275,42 @@ function referrerNotIn() {
    referrer not like 'https://dsearch.com/%' and
    referrer not like 'https://suche.t-online.de/%' and
    referrer not like 'https://search.lilo.org/%' and
+   referrer not like 'https://websearch.rakuten.co.jp/%' and
+   --
+   referrer not like 'https://www.wykop.pl/mikroblog/%' and
+   referrer not like 'https://www.wykop.pl/strona/%' and
+   referrer not like 'https://www.wykop.pl/forum/%' and
+   referrer not like 'https://www.wykop.pl/moj/%' and
+   referrer not like 'https://www.wykop.pl/tag/%' and
+   referrer not like 'https://www.wykop.pl/tag/wpisy/unknownews/%' and
+   --
+   referrer not like 'https://bbb6.xjtlu.edu.cn/html5client/join?sessionToken=%' and
+   referrer not like 'https://beta.stoopinbox.com/' and
+   referrer not like 'https://www.evernote.com/%' and
    referrer not like 'http://wenote.huawei.com/%' and
+   referrer not like 'http://notification.corp/notify-NotifyUser1?https/renenyffenegger.ch/%' and
+   referrer not like 'https://d1ysz50cxb9zwl.cloudfront.net/%' and
+   referrer not like 'https://deref-gmx.net/mail/client/WDPyyXQEo7Q/dereferrer/?redirectUrl%' and
+   referrer not like 'https://lm.facebook.com/l.php?%' and
+   referrer not like 'https://lmgtfy.com/%' and
+   referrer not like 'https://www.startpage.com/%' and
    referrer not in (
       'https://renenyffenegger.ch',                                          -- XXX
       'http://renenyffenegger.ch',                                           -- XXX
       'https://7ooo.ru/',
       'https://metager.de/',
+      'google.com',
       'http://m.facebook.com',
+      'https://m.facebook.com/',
+      'http://m.facebook.com/',
+      'https://suche.gmx.net/',
+      'https://chacha.design/',
+      'https://www.facebook.com/',
       'https://l.facebook.com/',
       'https://github.com/',
       'http://surf-es.com/',
+      'https://surf-es.com/',
+      'https://www.wykop.pl/',
       'http://www.surf-es.com/',
       'https://web.skype.com/',
       'https://getpocket.com/',
@@ -288,21 +319,34 @@ function referrerNotIn() {
       'http://localhost:8888/',
       'https://devtalk.blender.org/',                                        -- ???
       'https://search.becovi.com/',
+      'https://chplacardinysa.webflow.io/',
+      'https://prod.uhrs.playmsn.com/Judge/Views/judge?hitappid=33228&mode=judge&toolbar=false&g=1&fromHitApp=1',
+      'https://weboffice.com.hk/a1/index.php/default/index/blank',
       'https://gl.duoyioa.com/',
       'https://adfs.colt.net/adfs/ls/wia',
       'https://results.searchlock.com/',
+      'https://t.umblr.com/',
       'https://cbsearch.site/',
       'https://www.developpez.net/',
       'https://away.vk.com/',
       'https://gg0.chn.moe/',
       'https://l.messenger.com/',
       'https://m.vk.com/',
+      'https://startgoogle.startpagina.nl/?ts=ts1&origin=homepage&query=cmd.exe',
       'https://adguard.com/referrer.html',
+      'http://adguard.com/referrer.html',
+--    'https://www.wykop.pl/',
+--    'https://www.wykop.pl/mikroblog/hot/strona/2/',
+--    'https://www.wykop.pl/mikroblog/hot/strona/4/',
       'http://go.mail.ru/search_images',
+      'https://mail.trollwut.org/',
+      'https://mail.protonmail.com/',
+      'https://mail.notes.na.collabserv.com/verse',
       'https://daynhauhoc.com/',
       'https://www.kadaza.com/',
       'https://www.gog-info.com/',
       'https://www.qop-home.com/',
+      'https://login.cloud.zf.com/',
       'https://start.duckduckgo.com/',
       'https://workona.com/redirect/',
       'https://www.ardanlabs.com/',
@@ -312,24 +356,38 @@ function referrerNotIn() {
       'http://rsdn.org/forum/db/2446832.all',
       'https://ec58f1e1-ec46-4ede-9c32-9f8ae8ae7fb3.ws-us02.gitpod.io/',
       'https://gerrit.ericsson.se/',
+      'http://www.traackr.com/',
+      'https://jazz103.hursley.ibm.com:9443/jazz/web/projects/JTC-JAT',
+      'https://jira.resonant.com/browse/POL-2643',
+--    'https://www.traackr.com/',
+      'android-app://org.telegram.messenger/',
+      'android-app://org.telegram.messenger',
+      'android-app://com.slack/',
       'android-app://com.linkedin.android',
       'android-app://com.linkedin.android/',
+      'https://www.linkedin.com/',
       'https://int.search.myway.com/',
       'https://t.co/',
       'https://www.accueil-search.com/',
+      'https://apkpure.com/apkpure/com.apkpure.aegon/download?from=aegon',
+      'https://archive.kevinsaylor.me/',
       'https://www.reddit.com/',
       'https://dev.to/',
       'https://www.twitch.tv/',
       'https://app.raindrop.io/',
       'https://jit.ozon.ru/browse/RE-1999',
+      'https://moodle.inscamidemar.cat/enrol/index.php?id=734',
+      'https://moodle.inscamidemar.cat/course/view.php?id=734',
       'http://172.17.7.22:15871/cgi-bin/blockOptions.cgi?ws-session=1485309825',
-      'http://biosc.xyz/results.php?wd=select%20only%20top%20row%20oracle'
+      'http://10.10.180.30:8080/static/README.md'
+--    'http://biosc.xyz/results.php?wd=select%20only%20top%20row%20oracle'
    )
    " 
    . 
    "
    and referrer not in (
      'https://github.com/ReneNyffenegger/cpp-base64',
+     'https://github.com/eric-heiden/cpp-base64',
      'https://github.com/ReneNyffenegger/gcc-create-library',
      'https://github.com/ReneNyffenegger/winsqlite3.dll-4-VBA',
      'https://github.com/ReneNyffenegger/winsqlite3.dll-4-VBA/blob/master/README.md',
@@ -337,6 +395,9 @@ function referrerNotIn() {
      'https://github.com/marksisson/ReneNyffenegger.cpp-base64',
      'https://github.com/dedmen/cpp-base64/tree/0aaaf66785558807da1c331be114f8727f7f5a2b',
      'https://github.com/wnxd/cpp-base64',
+     'https://github.com/reactos/reactos/pull/2658',
+     'https://github.com/TomConlin/xpath2dot/issues/3',
+     'https://github.com/Perl5-Alien/Alien-Build/issues/13',
      'http://mqjing.blogspot.com/2009/04/c-gcc-library.html',
      'https://dnupaseventeentwo.elfiny.top/pa-17-2-unix/21_5.html',
      'https://github.com/m-ab-s/media-autobuild_suite/pull/1465',
@@ -349,12 +410,13 @@ function referrerNotIn() {
      'https://my.oschina.net/VenusV/blog/2946245',
      'https://www.eclipse.org/forums/index.php/t/1102166/',
      'https://www.figma.com/open-source/',
+     'https://iostream.ir/entry/92-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%B3%D8%AA%D8%A7%D8%AA%DB%8C%DA%A9-%D9%88-%D8%AF%D8%A7%DB%8C%D9%86%D8%A7%D9%85%DB%8C%DA%A9-%D9%BE%D9%88%DB%8C%D8%A7/',
      'https://www.linuxquestions.org/questions/linux-newbie-8/implementing-bluetooth-in-c-4175643687-print/',
+     'http://08039ae0.wiz03.com/wapp/pages/view/share/s/080VHw1LcN7F2vzcm_16NDdC11FPWX3GZQeK2FEtmE0H2ZBp',
      'http://www.cplusplus.com/forum/beginner/35554/',
      'https://medium.com/@fanzongshaoxing/tensorflow-c-api-to-run-a-object-detection-model-4d5928893b02',
      'https://medium.com/androidiots/the-magic-of-kotlin-native-part-2-49097c2dea1a',
      'https://bitbucket.org/jeewhanchoi/uoregon-cis330-s20-assignments/src/master/lab04/REAMDE.md',
-     'https://social.technet.microsoft.com/Forums/en-US/ee048512-1b36-40e1-92cf-9f64e2f52299/windows-10-manual?forum=win10itprogeneral',
      'https://rich-v01.bluewin.ch/cp/applink/mail/LoadMessageContent?cKey=1587324117250-5071&iframeID=x-mail-msg-iframe-box-1587324117107&cw=792',
      'https://www.developpez.net/forums/d2074018/c-cpp/c/bibliotheques-systemes-outils/bibliotheque-standard/ellipse-passage-d-arguments-multiples-stdarg/',
      'https://route7fxcqz4s-thenoobest-che.b542.starter-us-east-2a.openshiftapps.com/?uid=965884',
@@ -363,13 +425,30 @@ function referrerNotIn() {
      'http://october388.blogspot.com/2009/04/mingwdll.html?m=1',
      'https://routekpsxxkl6-nikita19992022-che.b542.starter-us-east-2a.openshiftapps.com/?uid=238554',
      'http://xsstorweb56srs3a.onion/threads/18099/',
+     'https://www.findbestopensource.com/article-detail/leaflet-kml',
+     'https://www.kutu66.com//GitHub/article_150480',
+     'https://www.wykop.pl/tag/unknownews/',
+     'http://feeds.feedburner.com/unknowNews',
+     'https://www.daniweb.com/posts/jump/454926',
+     'https://www.diigo.com/user/aerodiigo',
+     'https://t.co/NEKexjbmn1?amp=1',
+     'https://t.co/ougSwmUNvu?amp=1',
+     'https://t.co/ougSwmUNvu',
+     'https://t.co/NEKexjbmn1',
+     'https://t.co/6Ha59vRmvT',
+     'https://t.co/6Ha59vRmvT?amp=1',
+     'https://t.co/z1BDEJxxbr',
+     'https://newsletters.feedbinusercontent.com/7f4/7f452172ebb75c32903437b0398973cf45cee8bb.html',
      'http://www.cse.iitd.ac.in/~srsarangi/courses/2019/col_331_2019/index.html',
+     'http://www.cse.iitd.ernet.in/~srsarangi/courses/2019/col_331_2019/index.html',
      'https://bitbucket.org/lednesday/uoregon-cis330-s20/src/master/lab04/',                             -- ???
      'https://pc-newtab.maxthon.com/?&ln=en-us&mxver=5.3.8.2000&mxpn=max5'                               -- ???
    ) and
    referrer not like 'https://medium.com/@hussaini.faisal/hackthebox-writeup-control-370ff9ec01bb%' and
+   referrer not like 'https://www.wykop.pl/wpis/49391443/%' and
    referrer not like 'https://github.com/ReneNyffenegger/cpp-base64/%' and
    referrer not like 'https://github.com/ReneNyffenegger/WinAPI-4-VBA%' and
+   referrer not like 'https://social.technet.microsoft.com/Forums/en-US/ee048512-1b36-40e1-92cf-9f64e2f52299/windows-10-manual%' and
    referrer not like 'http%://renenyffenegger.ch/notes%' and
    referrer not like 'https://%.kutu66.com/GitHub/article_150480' and
    referrer not like 'http://disclaimer.airbusafran-launchers.com/notify-Disclaimer?https/renenyffenegger.ch/%' and
