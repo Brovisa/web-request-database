@@ -341,6 +341,7 @@ function referrerNotIn() {
    referrer not like 'https://lm.facebook.com/l.php?%' and
    referrer not like 'https://lmgtfy.com/%' and
    referrer not like 'https://www.startpage.com/%' and
+   referrer not like 'http://config.mi:8888/filtrage_orion/%' and
    referrer not in (
       'https://renenyffenegger.ch',                                          -- XXX
       'http://renenyffenegger.ch',                                           -- XXX
@@ -488,6 +489,7 @@ function referrerNotIn() {
      'https://t.co/6Ha59vRmvT',
      'https://t.co/6Ha59vRmvT?amp=1',
      'https://t.co/z1BDEJxxbr',
+     'http://forums.codeblocks.org/index.php?topic=12478.0',
      'https://newsletters.feedbinusercontent.com/7f4/7f452172ebb75c32903437b0398973cf45cee8bb.html',
      'http://www.cse.iitd.ac.in/~srsarangi/courses/2019/col_331_2019/index.html',
      'http://www.cse.iitd.ernet.in/~srsarangi/courses/2019/col_331_2019/index.html',
