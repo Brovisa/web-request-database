@@ -275,6 +275,7 @@ function referrerNotIn() {
    not regexp_like('/\/\/www\.google\.[^.]+\.[^.]+\//', referrer) and
    referrer not like 'https://translate.googleusercontent.com/%' and
    referrer not like 'https://www.bing.com%' and
+   referrer not like 'http://www1.search-results.com%' and
    referrer not like 'https://renenyffenegger.ch/%' and
    referrer not like 'https://duckduckgo.com%' and
    referrer not like 'https://baidu.com/%' and
@@ -340,6 +341,7 @@ function referrerNotIn() {
    referrer not like 'https://deref-gmx.net/mail/client/WDPyyXQEo7Q/dereferrer/?redirectUrl%' and
    referrer not like 'https://lm.facebook.com/l.php?%' and
    referrer not like 'https://lmgtfy.com/%' and
+   referrer not like 'https://proxys1.igw:4443/form_auth/%' and
    referrer not like 'https://www.startpage.com/%' and
    referrer not like 'http://config.mi:8888/filtrage_orion/%' and
    referrer not in (
@@ -426,6 +428,7 @@ function referrerNotIn() {
       'https://www.twitch.tv/',
       'https://app.raindrop.io/',
       'https://jit.ozon.ru/browse/RE-1999',
+      'https://rnd-isourceb.huawei.com/DCP_HWPlatform_Fenix_vHA/manifest/merge_requests/23628770',
       'https://moodle.inscamidemar.cat/enrol/index.php?id=734',
       'https://moodle.inscamidemar.cat/course/view.php?id=734',
       'http://172.17.7.22:15871/cgi-bin/blockOptions.cgi?ws-session=1485309825',
@@ -443,6 +446,7 @@ function referrerNotIn() {
      'https://github.com/ReneNyffenegger/winsqlite3.dll-4-VBA/blob/master/README.md',
      'https://github.com/ReneNyffenegger/winsqlite3.dll-PowerShell',
      'https://github.com/marksisson/ReneNyffenegger.cpp-base64',
+     'https://github.com/Yannic/cpp-base64', 
      'https://github.com/dedmen/cpp-base64/tree/0aaaf66785558807da1c331be114f8727f7f5a2b',
      'https://github.com/wnxd/cpp-base64',
      'https://github.com/reactos/reactos/pull/2658',
@@ -490,6 +494,7 @@ function referrerNotIn() {
      'https://t.co/6Ha59vRmvT?amp=1',
      'https://t.co/z1BDEJxxbr',
      'http://forums.codeblocks.org/index.php?topic=12478.0',
+     'http://softproc.ru/public/327266/', 
      'https://newsletters.feedbinusercontent.com/7f4/7f452172ebb75c32903437b0398973cf45cee8bb.html',
      'http://www.cse.iitd.ac.in/~srsarangi/courses/2019/col_331_2019/index.html',
      'http://www.cse.iitd.ernet.in/~srsarangi/courses/2019/col_331_2019/index.html',
