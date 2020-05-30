@@ -324,6 +324,8 @@ function referrerNotIn() {
    referrer not like 'https://suche.t-online.de/%' and
    referrer not like 'https://search.lilo.org/%' and
    referrer not like 'https://websearch.rakuten.co.jp/%' and
+   referrer not like 'https://s3arch.page/results.php?%' and
+   referrer not like 'https://s.surfshark.com/results?%' and
    --
    referrer not like 'https://www.wykop.pl/mikroblog/%' and
    referrer not like 'https://www.wykop.pl/strona/%' and
@@ -332,6 +334,7 @@ function referrerNotIn() {
    referrer not like 'https://www.wykop.pl/tag/%' and
    referrer not like 'https://www.wykop.pl/tag/wpisy/unknownews/%' and
    --
+   referrer not like 'https://www.printfriendly.com/%' and
    referrer not like 'https://bbb6.xjtlu.edu.cn/html5client/join?sessionToken=%' and
    referrer not like 'https://beta.stoopinbox.com/' and
    referrer not like 'https://www.evernote.com/%' and
@@ -343,19 +346,31 @@ function referrerNotIn() {
    referrer not like 'https://lmgtfy.com/%' and
    referrer not like 'https://proxys1.igw:4443/form_auth/%' and
    referrer not like 'https://www.startpage.com/%' and
+   referrer not like 'https://startpage.com/%' and
    referrer not like 'http://config.mi:8888/filtrage_orion/%' and
+   referrer not like 'https://%.starter-us-east-2.openshiftapps.com/?uid=%' and
+   referrer not like 'https://lemoteur.orange.fr/?kw=%' and
+   referrer not like 'https://searchbip.com/%' and
+   referrer not like 'android-app://org.telegram.%' and
    referrer not in (
       'https://renenyffenegger.ch',                                          -- XXX
       'http://renenyffenegger.ch',                                           -- XXX
       'https://7ooo.ru/',
       'https://metager.de/',
+      'https://search110.com/',
       'google.com',
+      'https://rseek.org/',
       'http://m.facebook.com',
       'https://qiita.com/',
       'https://m.facebook.com/',
+      'https://poczta.o2.pl/d/',
       'http://m.facebook.com/',
+      'https://www.youtube.com/',
+      'https://atc.bmwgroup.net/confluence/display/FACTSBA/Passwort+vergessen',
+      'https://3g2upl4pq6kufc4m.onion/lite/',
       'https://suche.gmx.net/',
       'https://chacha.design/',
+      'https://gitee.com/yhc2020/cpp-base64?_from=gitee_search',
       'https://www.facebook.com/',
       'https://developer.internal.ericsson.com/docs/bbi/build/bazel/explanation/understand-emca/build-basics/',
       'https://l.facebook.com/',
@@ -369,6 +384,7 @@ function referrerNotIn() {
       'https://g3.luciaz.me/',
       'https://github.ibm.com/',
       'http://localhost:8888/',
+      'https://www.gogote.com/',
       'https://devtalk.blender.org/',                                        -- ???
       'https://search.becovi.com/',
       'https://chplacardinysa.webflow.io/',
@@ -383,6 +399,7 @@ function referrerNotIn() {
       'https://away.vk.com/',
       'https://gg0.chn.moe/',
       'https://l.messenger.com/',
+      'https://session.us-proxy.startpage.com/tabframe/',
       'https://m.vk.com/',
       'https://startgoogle.startpagina.nl/?ts=ts1&origin=homepage&query=cmd.exe',
       'https://adguard.com/referrer.html',
@@ -404,7 +421,6 @@ function referrerNotIn() {
       'https://www.ardanlabs.com/',
       'https://sso.bah.com/',
       'https://sirius.na.sas.com/Sirius/GSTS/ShowTrack.aspx?trknum=7613050096',
-      'https://route92a3pi42-vladimirkv-che.8a09.starter-us-east-2.openshiftapps.com/?uid=724079',
       'http://rsdn.org/forum/db/2446832.all',
       'https://ec58f1e1-ec46-4ede-9c32-9f8ae8ae7fb3.ws-us02.gitpod.io/',
       'https://gerrit.ericsson.se/',
@@ -412,8 +428,6 @@ function referrerNotIn() {
       'https://jazz103.hursley.ibm.com:9443/jazz/web/projects/JTC-JAT',
       'https://jira.resonant.com/browse/POL-2643',
 --    'https://www.traackr.com/',
-      'android-app://org.telegram.messenger/',
-      'android-app://org.telegram.messenger',
       'android-app://com.slack/',
       'android-app://com.linkedin.android',
       'android-app://com.linkedin.android/',
@@ -452,6 +466,8 @@ function referrerNotIn() {
      'https://github.com/reactos/reactos/pull/2658',
      'https://github.com/TomConlin/xpath2dot/issues/3',
      'https://github.com/Perl5-Alien/Alien-Build/issues/13',
+     'https://github.com/seenister/os_lab_2019/blob/418b047f09c8a90a370805aac9286bf9937974f6/lab2/text/lab2.md',
+     'https://github.com/lowskill272/oslabs2019_1/blob/master/lab2/text/lab2.md',
      'http://mqjing.blogspot.com/2009/04/c-gcc-library.html',
      'https://dnupaseventeentwo.elfiny.top/pa-17-2-unix/21_5.html',
      'https://github.com/m-ab-s/media-autobuild_suite/pull/1465',
@@ -466,6 +482,7 @@ function referrerNotIn() {
      'https://www.figma.com/open-source/',
      'https://iostream.ir/entry/92-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%B3%D8%AA%D8%A7%D8%AA%DB%8C%DA%A9-%D9%88-%D8%AF%D8%A7%DB%8C%D9%86%D8%A7%D9%85%DB%8C%DA%A9-%D9%BE%D9%88%DB%8C%D8%A7/',
      'https://www.linuxquestions.org/questions/linux-newbie-8/implementing-bluetooth-in-c-4175643687-print/',
+     'https://git.pantelintl.com/projects/ITALK/repos/cmn_ils/pull-requests/434/overview',
      'http://08039ae0.wiz03.com/wapp/pages/view/share/s/080VHw1LcN7F2vzcm_16NDdC11FPWX3GZQeK2FEtmE0H2ZBp',
      'http://www.cplusplus.com/forum/beginner/35554/',
      'https://medium.com/@fanzongshaoxing/tensorflow-c-api-to-run-a-object-detection-model-4d5928893b02',
@@ -499,7 +516,8 @@ function referrerNotIn() {
      'http://www.cse.iitd.ac.in/~srsarangi/courses/2019/col_331_2019/index.html',
      'http://www.cse.iitd.ernet.in/~srsarangi/courses/2019/col_331_2019/index.html',
      'https://bitbucket.org/lednesday/uoregon-cis330-s20/src/master/lab04/',                             -- ???
-     'https://pc-newtab.maxthon.com/?&ln=en-us&mxver=5.3.8.2000&mxpn=max5'                               -- ???
+     'https://pc-newtab.maxthon.com/?&ln=en-us&mxver=5.3.8.2000&mxpn=max5',                              -- ???
+     'http://renenyffenegger.ch/Biblisches/Kommentare/index.html'
    ) and
    referrer not like 'https://medium.com/@hussaini.faisal/hackthebox-writeup-control-370ff9ec01bb%' and
    referrer not like 'https://www.wykop.pl/wpis/49391443/%' and
