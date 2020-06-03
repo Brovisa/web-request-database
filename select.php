@@ -310,7 +310,10 @@ function referrerNotIn() {
    referrer not like 'https://start.me/search/google?q=%' and
    referrer not like 'https://r.search.aol.com/%' and
    referrer not like 'https://www.lukol.com/%' and
-   referrer not like 'http%://www.so.com/%' and
+   referrer not like 'http%://%.so.com/%' and
+   referrer not like 'http%://%.webfirst.online/%' and
+   referrer not like 'http%://notify.bluecoat.com/%' and
+   referrer not like 'http%://%.onesearch.com/%' and
    referrer not like 'http%://www.seeres.com/%' and
    referrer not like 'http%://seeres.com/%' and
    referrer not like 'https://www.startsiden.no/sok/%' and
@@ -337,15 +340,18 @@ function referrerNotIn() {
    referrer not like 'https://www.printfriendly.com/%' and
    referrer not like 'https://bbb6.xjtlu.edu.cn/html5client/join?sessionToken=%' and
    referrer not like 'https://beta.stoopinbox.com/' and
+   referrer not like 'https://usearch.id/%' and
    referrer not like 'https://www.evernote.com/%' and
    referrer not like 'http://wenote.huawei.com/%' and
    referrer not like 'http://notification.corp/notify-NotifyUser1?https/renenyffenegger.ch/%' and
    referrer not like 'https://d1ysz50cxb9zwl.cloudfront.net/%' and
    referrer not like 'https://deref-gmx.net/mail/client/WDPyyXQEo7Q/dereferrer/?redirectUrl%' and
    referrer not like 'https://lm.facebook.com/l.php?%' and
+   referrer not like 'https://%.duckduckgo.com/' and
    referrer not like 'https://lmgtfy.com/%' and
    referrer not like 'https://proxys1.igw:4443/form_auth/%' and
    referrer not like 'https://www.startpage.com/%' and
+   referrer not like 'https://%.mysearch.com/%' and
    referrer not like 'https://startpage.com/%' and
    referrer not like 'http://config.mi:8888/filtrage_orion/%' and
    referrer not like 'https://%.starter-us-east-2.openshiftapps.com/?uid=%' and
@@ -359,6 +365,7 @@ function referrerNotIn() {
       'https://metager.de/',
       'https://search110.com/',
       'google.com',
+      'https://googleweblight.com/',
       'https://rseek.org/',
       'http://m.facebook.com',
       'https://qiita.com/',
@@ -377,7 +384,9 @@ function referrerNotIn() {
       'https://github.com/',
       'http://surf-es.com/',
       'https://surf-es.com/',
+      'https://iframe-toloka.com/',
       'https://www.wykop.pl/',
+      'http://plagscan.com',
       'http://www.surf-es.com/',
       'https://web.skype.com/',
       'https://getpocket.com/',
@@ -411,12 +420,12 @@ function referrerNotIn() {
       'https://mail.trollwut.org/',
       'https://mail.protonmail.com/',
       'https://mail.notes.na.collabserv.com/verse',
+      'https://search.avast.com/AV772/search/web?q=%25SystemRoot%25%5Csystem32%5Ccmd.exe',
       'https://daynhauhoc.com/',
       'https://www.kadaza.com/',
       'https://www.gog-info.com/',
       'https://www.qop-home.com/',
       'https://login.cloud.zf.com/',
-      'https://start.duckduckgo.com/',
       'https://workona.com/redirect/',
       'https://www.ardanlabs.com/',
       'https://sso.bah.com/',
@@ -439,6 +448,7 @@ function referrerNotIn() {
       'https://archive.kevinsaylor.me/',
       'https://www.reddit.com/',
       'https://dev.to/',
+      'https://www.it-gg.com/', 
       'https://www.twitch.tv/',
       'https://app.raindrop.io/',
       'https://jit.ozon.ru/browse/RE-1999',
@@ -467,6 +477,8 @@ function referrerNotIn() {
      'https://github.com/TomConlin/xpath2dot/issues/3',
      'https://github.com/Perl5-Alien/Alien-Build/issues/13',
      'https://github.com/seenister/os_lab_2019/blob/418b047f09c8a90a370805aac9286bf9937974f6/lab2/text/lab2.md',
+     'https://github.com/AppImage/AppImageKit/pull/1019',
+     'https://bugzilla.seeburger.de/show_bug.cgi?id=90812',
      'https://github.com/lowskill272/oslabs2019_1/blob/master/lab2/text/lab2.md',
      'http://mqjing.blogspot.com/2009/04/c-gcc-library.html',
      'https://dnupaseventeentwo.elfiny.top/pa-17-2-unix/21_5.html',
@@ -520,6 +532,7 @@ function referrerNotIn() {
      'http://renenyffenegger.ch/Biblisches/Kommentare/index.html'
    ) and
    referrer not like 'https://medium.com/@hussaini.faisal/hackthebox-writeup-control-370ff9ec01bb%' and
+   referrer not like 'https://t.co/2fklLJCDwT%' and
    referrer not like 'https://www.wykop.pl/wpis/49391443/%' and
    referrer not like 'https://github.com/ReneNyffenegger/cpp-base64/%' and
    referrer not like 'https://github.com/ReneNyffenegger/WinAPI-4-VBA%' and
