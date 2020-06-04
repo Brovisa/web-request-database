@@ -287,7 +287,7 @@ function referrerNotIn() {
    referrer not like 'android-app://com.google.android.%' and
    referrer not like 'https://lavasoft.gosearchresults.com/%' and
    referrer not like 'https://m.instasrch.com/search/gcse%' and 
-   referrer not like 'https://%search.myway.com/search/GGmain.jhtml?%' and
+   referrer not like 'https://%search.myway.com/search%' and
    referrer not like 'http://biosc.xyz/results.php?wd=%' and
    referrer not like 'https://www.yippy.com/search?%' and
    referrer not like 'http://%search.myway.com/search/GGmain.jhtml?%' and
