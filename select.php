@@ -350,6 +350,7 @@ function referrerNotIn() {
    referrer not like 'https://%.duckduckgo.com/' and
    referrer not like 'https://lmgtfy.com/%' and
    referrer not like 'https://proxys1.igw:4443/form_auth/%' and
+   referrer not like 'https://gateway.zscaler.net/%' and
    referrer not like 'https://www.startpage.com/%' and
    referrer not like 'https://%.mysearch.com/%' and
    referrer not like 'https://startpage.com/%' and
@@ -455,6 +456,7 @@ function referrerNotIn() {
       'https://rnd-isourceb.huawei.com/DCP_HWPlatform_Fenix_vHA/manifest/merge_requests/23628770',
       'https://moodle.inscamidemar.cat/enrol/index.php?id=734',
       'https://moodle.inscamidemar.cat/course/view.php?id=734',
+      'https://fs.vesuvius.com/adfs/ls/wia',
       'http://172.17.7.22:15871/cgi-bin/blockOptions.cgi?ws-session=1485309825',
       'http://10.10.180.30:8080/static/README.md'
 --    'http://biosc.xyz/results.php?wd=select%20only%20top%20row%20oracle'
@@ -491,6 +493,9 @@ function referrerNotIn() {
      'https://github.com/ReneNyffenegger/winsqlite3.dll-PowerShell/blob/master/README.md',
      'https://my.oschina.net/VenusV/blog/2946245',
      'https://www.eclipse.org/forums/index.php/t/1102166/',
+     'https://ebw-muenchen.de/artikel/3950/Juni-2019',
+     'https://www.bbkr.ch/forum/showthread.php?t=9958',
+     'https://medium.com/@kacell/yarn-spark-logging-6e758f73097d',
      'https://www.figma.com/open-source/',
      'https://iostream.ir/entry/92-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%B3%D8%AA%D8%A7%D8%AA%DB%8C%DA%A9-%D9%88-%D8%AF%D8%A7%DB%8C%D9%86%D8%A7%D9%85%DB%8C%DA%A9-%D9%BE%D9%88%DB%8C%D8%A7/',
      'https://www.linuxquestions.org/questions/linux-newbie-8/implementing-bluetooth-in-c-4175643687-print/',
