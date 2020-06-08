@@ -260,7 +260,7 @@ order by
 function referrerNotIn() {
    return "and referrer is not null and 
 -- referrer not like 'https://www.google.%' and
--- not regexp_like('/https:[^\/]*(yahoo|google)\.com\//', referrer) and
+   not regexp_like('/https:\/\/(yahoo|google)\.com\//', referrer) and
    not regexp_like('/^https?:\/\/"          .
                    "[^.]+\."               . 
                    "(bing|yahoo|google)\." .
@@ -347,11 +347,13 @@ function referrerNotIn() {
    referrer not like 'https://d1ysz50cxb9zwl.cloudfront.net/%' and
    referrer not like 'https://deref-gmx.net/mail/client/WDPyyXQEo7Q/dereferrer/?redirectUrl%' and
    referrer not like 'https://lm.facebook.com/l.php?%' and
+   referrer not like 'https://e1792.reu1.blindsidenetworks.com/html5client/join?sessionToken=%' and
    referrer not like 'https://%.duckduckgo.com/' and
    referrer not like 'https://lmgtfy.com/%' and
    referrer not like 'https://proxys1.igw:4443/form_auth/%' and
    referrer not like 'https://gateway.zscaler.net/%' and
    referrer not like 'https://www.startpage.com/%' and
+   referrer not like 'https://mirror.loerfy.now.sh/url?%' and
    referrer not like 'https://%.mysearch.com/%' and
    referrer not like 'https://startpage.com/%' and
    referrer not like 'http://config.mi:8888/filtrage_orion/%' and
@@ -393,6 +395,7 @@ function referrerNotIn() {
       'https://getpocket.com/',
       'https://g3.luciaz.me/',
       'https://github.ibm.com/',
+      'http://dnserrorassist.att.net/search/?q=http%3A//hkey_local_machine/SOFTWARE/Microsoft/Command%2520Processor&r=&bc=',
       'http://localhost:8888/',
       'https://www.gogote.com/',
       'https://devtalk.blender.org/',                                        -- ???
@@ -466,6 +469,7 @@ function referrerNotIn() {
    "
    and referrer not in (
      'https://github.com/ReneNyffenegger/cpp-base64',
+     'https://github.com/ReneNyffenegger/MS-Access-bootstrap',
      'https://github.com/eric-heiden/cpp-base64',
      'https://github.com/ReneNyffenegger/gcc-create-library',
      'https://github.com/ReneNyffenegger/winsqlite3.dll-4-VBA',
@@ -495,6 +499,7 @@ function referrerNotIn() {
      'https://www.eclipse.org/forums/index.php/t/1102166/',
      'https://ebw-muenchen.de/artikel/3950/Juni-2019',
      'https://www.bbkr.ch/forum/showthread.php?t=9958',
+     'https://www.bbkr.ch/forum/showthread.php?t=9983',
      'https://medium.com/@kacell/yarn-spark-logging-6e758f73097d',
      'https://www.figma.com/open-source/',
      'https://iostream.ir/entry/92-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%A7%D8%B3%D8%AA%D8%A7%D8%AA%DB%8C%DA%A9-%D9%88-%D8%AF%D8%A7%DB%8C%D9%86%D8%A7%D9%85%DB%8C%DA%A9-%D9%BE%D9%88%DB%8C%D8%A7/',
@@ -520,6 +525,7 @@ function referrerNotIn() {
      'https://www.daniweb.com/posts/jump/454926',
      'https://www.diigo.com/user/aerodiigo',
      'https://jasonjason.tistory.com/71',
+     'https://blog.csdn.net/u013430110/article/details/103797776',
      'https://t.co/NEKexjbmn1?amp=1',
      'https://t.co/ougSwmUNvu?amp=1',
      'https://t.co/ougSwmUNvu',
@@ -527,6 +533,7 @@ function referrerNotIn() {
      'https://t.co/6Ha59vRmvT',
      'https://t.co/6Ha59vRmvT?amp=1',
      'https://t.co/z1BDEJxxbr',
+     'https://www.reddit.com/r/languagelearning/comments/f7c1hw/change_y_and_z_keys_microsoft_ime_japanese/',
      'http://forums.codeblocks.org/index.php?topic=12478.0',
      'http://softproc.ru/public/327266/', 
      'https://newsletters.feedbinusercontent.com/7f4/7f452172ebb75c32903437b0398973cf45cee8bb.html',
@@ -538,6 +545,7 @@ function referrerNotIn() {
    ) and
    referrer not like 'https://medium.com/@hussaini.faisal/hackthebox-writeup-control-370ff9ec01bb%' and
    referrer not like 'https://t.co/2fklLJCDwT%' and
+   referrer not like 'https://t.co/rQJiZL6dXl%' and
    referrer not like 'https://www.wykop.pl/wpis/49391443/%' and
    referrer not like 'https://github.com/ReneNyffenegger/cpp-base64/%' and
    referrer not like 'https://github.com/ReneNyffenegger/WinAPI-4-VBA%' and
@@ -547,7 +555,8 @@ function referrerNotIn() {
    referrer not like 'http://disclaimer.airbusafran-launchers.com/notify-Disclaimer?https/renenyffenegger.ch/%' and
    referrer not like 'https://github.com/%/os_lab_2019/blob/master/lab2/text/lab2.md' and
    referrer not like 'https://blog.csdn.net/weixin_34341117/article/details/91741856%' and
-   referrer not like 'https://t.co/2fklLJl2Fl%'
+   referrer not like 'https://t.co/2fklLJl2Fl%' and
+   referrer not like 'https://t.co/Rubkm78rxe%'
    ";
 
 
