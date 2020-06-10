@@ -358,6 +358,7 @@ function referrerNotIn() {
    referrer not like 'https://lemoteur.orange.fr/?kw=%' and
    referrer not like 'https://searchbip.com/%' and
    referrer not like 'android-app://org.telegram.%' and
+   referrer not like 'https://tallarium.atlassian.net/secure/RapidBoard.jspa%' and
    referrer not in (
       'https://renenyffenegger.ch',                                          -- XXX
       'http://renenyffenegger.ch',                                           -- XXX
@@ -365,6 +366,7 @@ function referrerNotIn() {
       'https://metager.de/',
       'https://search110.com/',
       'google.com',
+      'https://google.202014.xyz/',
       'https://googleweblight.com/',
       'https://rseek.org/',
       'http://m.facebook.com',
@@ -372,10 +374,13 @@ function referrerNotIn() {
       'https://m.facebook.com/',
       'https://poczta.o2.pl/d/',
       'http://m.facebook.com/',
+      'http://app.limber.io',
       'https://www.youtube.com/',
+      'https://l.instagram.com/',
       'https://atc.bmwgroup.net/confluence/display/FACTSBA/Passwort+vergessen',
       'https://3g2upl4pq6kufc4m.onion/lite/',
       'https://suche.gmx.net/',
+      'https://ift.tt/37jVK6B',
       'https://chacha.design/',
       'https://gitee.com/yhc2020/cpp-base64?_from=gitee_search',
       'https://www.facebook.com/',
@@ -401,6 +406,7 @@ function referrerNotIn() {
       'https://prod.uhrs.playmsn.com/Judge/Views/judge?hitappid=33228&mode=judge&toolbar=false&g=1&fromHitApp=1',
       'https://weboffice.com.hk/a1/index.php/default/index/blank',
       'https://gl.duoyioa.com/',
+      'https://adfs.voestalpine.com/adfs/ls/wia',
       'https://adfs.colt.net/adfs/ls/wia',
       'https://results.searchlock.com/',
       'https://t.umblr.com/',
@@ -442,8 +448,10 @@ function referrerNotIn() {
       'android-app://com.linkedin.android',
       'android-app://com.linkedin.android/',
       'https://www.linkedin.com/',
+      'https://www.linkedin.com/feed/',
       'https://int.search.myway.com/',
       'https://t.co/',
+      'https://www.search-duo.com/',
       'https://www.accueil-search.com/',
       'https://apkpure.com/apkpure/com.apkpure.aegon/download?from=aegon',
       'https://archive.kevinsaylor.me/',
@@ -469,6 +477,7 @@ function referrerNotIn() {
      'https://github.com/ReneNyffenegger/MS-Access-bootstrap',
      'https://github.com/eric-heiden/cpp-base64',
      'https://github.com/ReneNyffenegger/gcc-create-library',
+     'https://github.com/Wizaron/cpp-base64',
      'https://github.com/ReneNyffenegger/winsqlite3.dll-4-VBA',
      'https://github.com/ReneNyffenegger/winsqlite3.dll-4-VBA/blob/master/README.md',
      'https://github.com/ReneNyffenegger/winsqlite3.dll-PowerShell',
@@ -507,6 +516,7 @@ function referrerNotIn() {
      'https://medium.com/@fanzongshaoxing/tensorflow-c-api-to-run-a-object-detection-model-4d5928893b02',
      'https://medium.com/androidiots/the-magic-of-kotlin-native-part-2-49097c2dea1a',
      'https://bitbucket.org/jeewhanchoi/uoregon-cis330-s20-assignments/src/master/lab04/REAMDE.md',
+     'https://bitbucket.org/ayr_catec/web-service/src/master/src/base64.cpp',
      'https://rich-v01.bluewin.ch/cp/applink/mail/LoadMessageContent?cKey=1587324117250-5071&iframeID=x-mail-msg-iframe-box-1587324117107&cw=792',
      'https://www.developpez.net/forums/d2074018/c-cpp/c/bibliotheques-systemes-outils/bibliotheque-standard/ellipse-passage-d-arguments-multiples-stdarg/',
      'https://route7fxcqz4s-thenoobest-che.b542.starter-us-east-2a.openshiftapps.com/?uid=965884',
@@ -519,6 +529,7 @@ function referrerNotIn() {
      'https://www.kutu66.com//GitHub/article_150480',
      'https://www.wykop.pl/tag/unknownews/',
      'http://feeds.feedburner.com/unknowNews',
+     'http://sib.vc/public/327266/',
      'https://www.daniweb.com/posts/jump/454926',
      'https://www.diigo.com/user/aerodiigo',
      'https://jasonjason.tistory.com/71',
@@ -542,6 +553,7 @@ function referrerNotIn() {
    ) and
    referrer not like 'https://medium.com/@hussaini.faisal/hackthebox-writeup-control-370ff9ec01bb%' and
    referrer not like 'https://t.co/2fklLJCDwT%' and
+   referrer not like 'https://t.co/N8YEhWFpnL%' and
    referrer not like 'https://t.co/rQJiZL6dXl%' and
    referrer not like 'https://www.wykop.pl/wpis/49391443/%' and
    referrer not like 'https://github.com/ReneNyffenegger/cpp-base64/%' and
