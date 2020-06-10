@@ -84,9 +84,6 @@ print("</table>");
 function selectCount($db, $colName) {
 
    $where = '';
-#  if ($colName == 'referrer') {
-#     $where = referrerNotIn();
-#  }
 
    $stmt = $db -> prepare("select
       count(*) cnt,
@@ -103,19 +100,19 @@ function selectCount($db, $colName) {
    $stmt->execute();
    print("<table border='1'>");
    while ($row = $stmt->fetch()) {
-       print("<tr><td>" . $row['cnt']    . "</td>");
+       print("<tr><td>" . $row['cnt'] . "</td>");
 
-#        if ($colName == 'referrer') {
-#           print("<td><a href='" . $row[$colName] . "' target='_blank'>" . $row[$colName] . "</a></td>");
-#        }
-#        else {
-            print("<td>" . $row[$colName] . "</td>");
-#        }
+       print('<td>');
 
-
-         # if ($colName == 'addr') {
-         #    print("<td>" . gethostbyaddr($row['addr']) . "</td>");
-         # }
+       if ($colName == 'ua') {
+         $val = $row[$colName];
+         $val = preg_replace('/\b(http[^) ;]+)/', '<a href="$1" target="_blank">$1</a>', $val);
+         print ($val);
+       }
+       else {
+          print("<td>" . $row[$colName]  . "</td>");
+       }
+       print('</td>');
 
        print("</tr>");
    }
