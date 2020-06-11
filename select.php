@@ -270,7 +270,8 @@ function referrerNotIn() {
                    "(bing|yahoo|google)\.[^.]+\/?/', referrer) and
 
    not regexp_like('/\/\/www\.google\.[^.]+\.[^.]+\//', referrer) and
-   referrer not like 'https://translate.googleusercontent.com/%' and
+   referrer not like 'https://%.googleusercontent.com/%' and
+   referrer not like 'https://www.youtube.com/redirect?event=comments%' and
    referrer not like 'https://www.bing.com%' and
    referrer not like 'http://www1.search-results.com%' and
    referrer not like 'https://renenyffenegger.ch/%' and
@@ -323,6 +324,7 @@ function referrerNotIn() {
    referrer not like 'https://dsearch.com/%' and
    referrer not like 'https://suche.t-online.de/%' and
    referrer not like 'https://search.lilo.org/%' and
+   referrer not like 'https://jira.resonant.com/browse/POL-2643%' and
    referrer not like 'https://websearch.rakuten.co.jp/%' and
    referrer not like 'https://s3arch.page/results.php?%' and
    referrer not like 'https://s.surfshark.com/results?%' and
@@ -392,6 +394,7 @@ function referrerNotIn() {
       'https://iframe-toloka.com/',
       'https://www.wykop.pl/',
       'http://plagscan.com',
+      'http://fidelitycentral.fmr.com/',
       'http://www.surf-es.com/',
       'https://web.skype.com/',
       'https://getpocket.com/',
@@ -442,7 +445,6 @@ function referrerNotIn() {
       'https://gerrit.ericsson.se/',
       'http://www.traackr.com/',
       'https://jazz103.hursley.ibm.com:9443/jazz/web/projects/JTC-JAT',
-      'https://jira.resonant.com/browse/POL-2643',
 --    'https://www.traackr.com/',
       'android-app://com.slack/',
       'android-app://com.linkedin.android',
@@ -475,6 +477,7 @@ function referrerNotIn() {
    and referrer not in (
      'https://github.com/ReneNyffenegger/cpp-base64',
      'https://github.com/ReneNyffenegger/MS-Access-bootstrap',
+     'https://github.com/ReneNyffenegger/VBS-MS-Office-App-Creator',
      'https://github.com/eric-heiden/cpp-base64',
      'https://github.com/ReneNyffenegger/gcc-create-library',
      'https://github.com/Wizaron/cpp-base64',
@@ -535,11 +538,7 @@ function referrerNotIn() {
      'https://jasonjason.tistory.com/71',
      'https://blog.csdn.net/u013430110/article/details/103797776',
      'https://t.co/NEKexjbmn1?amp=1',
-     'https://t.co/ougSwmUNvu?amp=1',
-     'https://t.co/ougSwmUNvu',
      'https://t.co/NEKexjbmn1',
-     'https://t.co/6Ha59vRmvT',
-     'https://t.co/6Ha59vRmvT?amp=1',
      'https://t.co/z1BDEJxxbr',
      'https://www.reddit.com/r/languagelearning/comments/f7c1hw/change_y_and_z_keys_microsoft_ime_japanese/',
      'http://forums.codeblocks.org/index.php?topic=12478.0',
@@ -555,6 +554,9 @@ function referrerNotIn() {
    referrer not like 'https://t.co/2fklLJCDwT%' and
    referrer not like 'https://t.co/N8YEhWFpnL%' and
    referrer not like 'https://t.co/rQJiZL6dXl%' and
+   referrer not like 'https://t.co/ougSwmUNvu%' and
+   referrer not like 'https://t.co/MCXRzqXlNe%' and
+   referrer not like 'https://t.co/6Ha59vRmvT%' and
    referrer not like 'https://www.wykop.pl/wpis/49391443/%' and
    referrer not like 'https://github.com/ReneNyffenegger/cpp-base64/%' and
    referrer not like 'https://github.com/ReneNyffenegger/WinAPI-4-VBA%' and
